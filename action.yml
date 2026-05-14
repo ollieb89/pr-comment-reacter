@@ -1,0 +1,15 @@
+name: 'PR Comment Reacter'
+description: 'Automatically reacts to PR comments based on keywords'
+author: 'ollieb89'
+inputs:
+  token:
+    description: 'GitHub Token'
+    required: true
+    default: ${{ github.token }}
+  reactions:
+    description: 'JSON map of keywords to reactions (e.g., {"ship": "rocket", "fix": "wrench"})'
+    required: true
+    default: '{"shipit": "rocket", "LGTM": "heart"}'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
